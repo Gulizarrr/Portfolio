@@ -1,33 +1,30 @@
-/* Minimal, clean styling for a GitHub Pages-ready portfolio */
-:root{
-  --bg: #0b0c10;
-  --panel: #121318;
-  --text: #e8e8ea;
-  --muted: #a7a9b0;
-  --accent: #6aa3ff;
-  --border: #242632;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fbe9e7; /* pastel pembe ton */
+    color: #333;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif}
-a{color:var(--text);text-decoration:none}
-.container{max-width:1024px;margin:0 auto;padding:24px}
-header.container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:16px}
-.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2b2f3a,#1a1d24);border:1px solid var(--border);font-weight:700}
-.name{margin:0;font-size:1.5rem}
-.tagline{margin:2px 0;color:var(--muted)}
-.availability{margin:0;color:var(--accent);font-weight:600}
-.actions{display:flex;flex-wrap:wrap;gap:8px}
-.btn{display:inline-block;padding:10px 14px;border-radius:999px;background:var(--accent);color:#0b0c10;font-weight:700;border:1px solid transparent;box-shadow:0 1px 0 rgba(0,0,0,.2)}
-.btn:hover{opacity:.95;transform:translateY(-1px)}
-.btn.outline{background:transparent;color:var(--text);border-color:var(--border)}
-main .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-h2{margin:24px 0 8px}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 1px 0 rgba(0,0,0,.25)}
-.card h3{margin:0 0 6px}
-.card p{margin:0 0 10px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 10px}
-.tags li{padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.85rem;color:var(--muted)}
-.card-actions{display:flex;justify-content:flex-start}
-footer.footer{color:var(--muted);text-align:center;padding-bottom:40px}
+header {
+    background-color: #b0bec5; /* kodlama grisi */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+h2 {
+    color: #b71c1c;
+}
+
+a {
+    color: #880e4f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
