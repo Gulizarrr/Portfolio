@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gülüzar Durmaz — Portfolio</title>
+  <meta name="description" content="Junior Computer Vision & HPC — open to internship/junior roles in Switzerland.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true">GD</div>
+      <div>
+        <h1 class="name">Gülüzar Durmaz</h1>
+        <p class="tagline">Junior Computer Vision &amp; High-Performance Computing</p>
+        <p class="availability">Actively seeking internship/junior roles in Switzerland</p>
+      </div>
+    </div>
+    <nav class="actions">
+      <a class="btn" href="https://github.com/Gulizarrr" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:your.email@example.com">Email</a>
+      <a class="btn outline" href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Projects</h2>
+      <div id="projects" class="grid"></div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="chips">
+        <li>Python</li>
+        <li>PyTorch</li>
+        <li>Computer Vision</li>
+        <li>HPC</li>
+        <li>CUDA</li>
+        <li>Bash</li>
+        <li>Git</li>
+        <li>Jupyter</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Gülüzar Durmaz · Built for GitHub Pages</small>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Projects data (edit this array to add/remove projects)
+    const projects = [
+      {
+        title: "4D Reconstruction Neural Network for Arctic Climate Data",
+        description: "PyTorch model predicting Arctic Ocean temperature & salinity from satellite-derived numerical data; trained on HPC with multi-GPU & CUDA.",
+        tags: ["PyTorch","HPC","CUDA","Scientific ML"],
+        link: "https://github.com/Gulizarrr/NEURAL-NETWORK-FOR-ARCTIC-CLIMATE-DATA"
+      },
+      {
+        title: "AIAC Conference Paper (2021-103)",
+        description: "Data science & machine learning in the aviation domain — conference publication accompanying my master’s work.",
+        tags: ["Aviation","ML","Research"],
+        link: "http://aiac.ae.metu.edu.tr/paper.php/AIAC-2021-103"
+      }
+      // Add more projects here...
+    ];
+
+    const grid = document.getElementById('projects');
+    projects.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      const h3 = document.createElement('h3');
+      h3.textContent = p.title;
+
+      const desc = document.createElement('p');
+      desc.textContent = p.description;
+
+      const taglist = document.createElement('ul');
+      taglist.className = 'tags';
+      p.tags.forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        taglist.appendChild(li);
+      });
+
+      const actions = document.createElement('div');
+      actions.className = 'card-actions';
+      const a = document.createElement('a');
+      a.href = p.link;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.className = 'btn';
+      a.textContent = 'View';
+      actions.appendChild(a);
+
+      card.appendChild(h3);
+      card.appendChild(desc);
+      card.appendChild(taglist);
+      card.appendChild(actions);
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
