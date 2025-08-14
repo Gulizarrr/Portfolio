@@ -9,14 +9,15 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f7e4e4; /* pastel gül kurusu */
-        color: #333;
+        background-color: #f4f7f9; /* profesyonel açık mavi / gri ton */
+        color: #222;
         scroll-behavior: smooth;
     }
     header {
         padding: 20px;
         text-align: center;
-        background-color: #f7c9c9;
+        background-color: #2c3e50; /* koyu profesyonel renk */
+        color: #fff;
         position: sticky;
         top: 0;
         z-index: 100;
@@ -31,18 +32,19 @@
         padding: 5px 10px;
         border: none;
         cursor: pointer;
-        background-color: #fff0f0;
+        background-color: #ecf0f1;
+        color: #2c3e50;
         border-radius: 5px;
         transition: all 0.3s ease;
     }
-    nav button:hover { background-color: #f7c9c9; }
+    nav button:hover { background-color: #bdc3c7; }
 
     /* --- Bölümler --- */
     section {
         max-width: 900px;
         margin: 40px auto;
         padding: 20px;
-        background-color: #fff0f0;
+        background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         opacity: 0;
@@ -53,14 +55,12 @@
         opacity: 1;
         transform: translateY(0);
     }
-    h2 {
-        margin-top: 0;
-    }
+    h2 { margin-top: 0; }
 
     /* --- Accordion --- */
     .accordion {
-        background-color: #333333; /* koyu gri */
-        color: #f7e4e4;
+        background-color: #34495e;
+        color: #ecf0f1;
         cursor: pointer;
         padding: 15px;
         width: 100%;
@@ -72,15 +72,15 @@
         border-radius: 5px;
         margin-bottom: 5px;
     }
-    .accordion:hover { background-color: #555555; }
-    .accordion.active { background-color: #444444; }
+    .accordion:hover { background-color: #3d566e; }
+    .accordion.active { background-color: #2c3e50; }
     .panel {
         padding: 0 15px;
-        background-color: #444444;
+        background-color: #3d566e;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        color: #f7e4e4;
+        color: #ecf0f1;
         border-radius: 0 0 5px 5px;
         margin-bottom: 10px;
     }
@@ -93,8 +93,8 @@
         margin-top: 15px;
     }
     .project-card {
-        background-color: #333333;
-        color: #f7e4e4;
+        background-color: #34495e;
+        color: #ecf0f1;
         padding: 15px;
         border-radius: 10px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -126,7 +126,7 @@
     .hobby {
         width: 100px;
         height: 100px;
-        background-color: #f7c9c9;
+        background-color: #bdc3c7;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -149,7 +149,7 @@
 <body>
 
 <header>
-    <h1>Gülüzar Durmaz</h1>
+    <h1>Gülüzar DURMAZ PIEŃKOWSKI</h1>
     <nav>
         <button onclick="changeLanguage('en')">EN</button>
         <button onclick="changeLanguage('de')">DE</button>
@@ -159,13 +159,18 @@
 </header>
 
 <section id="about" class="visible">
-    <h2>About Me</h2>
+    <h2 data-lang-en="About Me" data-lang-de="Über mich" data-lang-tr="Hakkımda" data-lang-fr="À propos de moi">About Me</h2>
     <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-    <p>Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions.</p>
+    <p data-lang-en="Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions."
+       data-lang-de="Machine Learning & Computer Vision Enthusiast. Berufswechsler mit mehreren Projekten von Grund auf. Offen für Junior-/Praktikumspositionen."
+       data-lang-tr="Makine Öğrenimi ve Bilgisayarlı Görü, Görüntü İşleme tutkunu. Birkaç projeyi baştan geliştirmiş kariyer değiştirici. Junior / staj pozisyonlarına açığım."
+       data-lang-fr="Passionnée par le Machine Learning et la Vision par Ordinateur. Changement de carrière avec plusieurs projets réalisés de zéro. Ouvert aux postes junior / stage.">
+       Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions.
+    </p>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
+    <h2 data-lang-en="Projects" data-lang-de="Projekte" data-lang-tr="Projeler" data-lang-fr="Projets">Projects</h2>
 
     <button class="accordion">Neural Network for Arctic Climate Data</button>
     <div class="panel">
@@ -178,18 +183,16 @@
         <p>Started a Computer Vision project during AI Engineer role. Developed initial model and framework.</p>
     </div>
 
-    <div class="projects">
-        <!-- Add more project cards here -->
-    </div>
+    <div class="projects"></div>
 </section>
 
 <section id="cv">
-    <h2>Curriculum Vitae</h2>
+    <h2 data-lang-en="Curriculum Vitae" data-lang-de="Lebenslauf" data-lang-tr="Özgeçmiş" data-lang-fr="CV">Curriculum Vitae</h2>
     <iframe src="CV.pdf" class="cv-frame"></iframe>
 </section>
 
 <section id="hobbies">
-    <h2>Hobbies</h2>
+    <h2 data-lang-en="Hobbies" data-lang-de="Hobbys" data-lang-tr="Hobiler" data-lang-fr="Loisirs">Hobbies</h2>
     <div class="hobbies">
         <div class="hobby">Photography</div>
         <div class="hobby">Travel</div>
@@ -199,7 +202,7 @@
 </section>
 
 <section id="languages">
-    <h2>Languages</h2>
+    <h2 data-lang-en="Languages" data-lang-de="Sprachen" data-lang-tr="Diller" data-lang-fr="Langues">Languages</h2>
     <p>EN / DE / TR / FR</p>
 </section>
 
@@ -231,11 +234,11 @@
 
     // --- Language Switch ---
     function changeLanguage(lang){
-        alert("Language switch to: " + lang + " (content translation to be added)");
-        // Burada ileride içerik çevirisi ekleyebilirsin
+        document.querySelectorAll('[data-lang-'+lang+']').forEach(el=>{
+            el.innerText = el.getAttribute('data-lang-'+lang);
+        });
     }
 </script>
 
 </body>
 </html>
-
