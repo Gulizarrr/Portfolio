@@ -1,244 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gülüzar Durmaz Pieńkowski Portfolio</title>
-<style>
-    /* --- Genel Stil --- */
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f7f9; /* profesyonel açık mavi / gri ton */
-        color: #222;
-        scroll-behavior: smooth;
-    }
-    header {
-        padding: 20px;
-        text-align: center;
-        background-color: #2c3e50; /* koyu profesyonel renk */
-        color: #fff;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header h1 { margin: 0; }
-    nav {
-        margin-top: 10px;
-    }
-    nav button {
-        margin: 0 5px;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-        background-color: #ecf0f1;
-        color: #2c3e50;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-    }
-    nav button:hover { background-color: #bdc3c7; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=https://github.com/Gulizarrr">
+    <title>Redirecting...</title>
+    <style>
+        /* --- General Styles --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            color: #222;
+            scroll-behavior: smooth;
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: #2c3e50;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; }
+        nav {
+            margin-top: 10px;
+        }
+        nav button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav button:hover { background-color: #bdc3c7; }
 
-    /* --- Bölümler --- */
-    section {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-    }
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    h2 { margin-top: 0; }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 { margin-top: 0; }
 
-    /* --- Accordion --- */
-    .accordion {
-        background-color: #34495e;
-        color: #ecf0f1;
-        cursor: pointer;
-        padding: 15px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 1.1em;
-        transition: background-color 0.3s ease;
-        border-radius: 5px;
-        margin-bottom: 5px;
-    }
-    .accordion:hover { background-color: #3d566e; }
-    .accordion.active { background-color: #2c3e50; }
-    .panel {
-        padding: 0 15px;
-        background-color: #3d566e;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        color: #ecf0f1;
-        border-radius: 0 0 5px 5px;
-        margin-bottom: 10px;
-    }
+        /* Accordion */
+        .accordion {
+            background-color: #34495e;
+            color: #ecf0f1;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .accordion:hover { background-color: #3d566e; }
+        .accordion.active { background-color: #2c3e50; }
+        .panel {
+            padding: 0 15px;
+            background-color: #3d566e;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #ecf0f1;
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 10px;
+        }
 
-    /* --- Github projeleri --- */
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap: 15px;
-        margin-top: 15px;
-    }
-    .project-card {
-        background-color: #34495e;
-        color: #ecf0f1;
-        padding: 15px;
-        border-radius: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .project-card {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-    /* --- Fotoğraf alanı --- */
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color: #ddd;
-        display: block;
-        margin: 0 auto;
-        object-fit: cover;
-    }
+        /* Profile Photo */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+        }
 
-    /* --- Hobiler --- */
-    .hobbies {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-    .hobby {
-        width: 100px;
-        height: 100px;
-        background-color: #bdc3c7;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        text-align: center;
-    }
+        /* Hobbies */
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .hobby {
+            width: 100px;
+            height: 100px;
+            background-color: #bdc3c7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+        }
 
-    /* --- CV --- */
-    .cv-frame {
-        width: 100%;
-        height: 500px;
-        border: none;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-
-</style>
+        /* CV */
+        .cv-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
+    <p>Redirecting to GitHub...</p>
 
-<header>
-    <h1>Gülüzar DURMAZ PIEŃKOWSKI</h1>
-    <nav>
-        <button onclick="changeLanguage('en')">EN</button>
-        <button onclick="changeLanguage('de')">DE</button>
-        <button onclick="changeLanguage('tr')">TR</button>
-        <button onclick="changeLanguage('fr')">FR</button>
-    </nav>
-</header>
+    <header>
+        <h1>Gülüzar DURMAZ PIEŃKOWSKI</h1>
+        <nav>
+            <button onclick="alert('English is active')">EN</button>
+        </nav>
+    </header>
 
-<section id="about" class="visible">
-    <h2 data-lang-en="About Me" data-lang-de="Über mich" data-lang-tr="Hakkımda" data-lang-fr="À propos de moi">About Me</h2>
-    <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-    <p data-lang-en="Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions."
-       data-lang-de="Machine Learning & Computer Vision Enthusiast. Berufswechsler mit mehreren Projekten von Grund auf. Offen für Junior-/Praktikumspositionen."
-       data-lang-tr="Makine Öğrenimi ve Bilgisayarlı Görü, Görüntü İşleme tutkunu. Birkaç projeyi baştan geliştirmiş kariyer değiştirici. Junior / staj pozisyonlarına açığım."
-       data-lang-fr="Passionnée par le Machine Learning et la Vision par Ordinateur. Changement de carrière avec plusieurs projets réalisés de zéro. Ouvert aux postes junior / stage.">
-       Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions.
-    </p>
-</section>
+    <section id="about" class="visible">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+        <p>
+            Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions.
+        </p>
+    </section>
 
-<section id="projects">
-    <h2 data-lang-en="Projects" data-lang-de="Projekte" data-lang-tr="Projeler" data-lang-fr="Projets">Projects</h2>
+    <section id="projects" class="visible">
+        <h2>Projects</h2>
 
-    <button class="accordion">Neural Network for Arctic Climate Data</button>
-    <div class="panel">
-        <p>PyTorch 4D reconstruction neural network predicting Arctic Ocean temperature and salinity profiles.</p>
-        <a href="https://github.com/Gulizarrr/NEURAL-NETWORK-FOR-ARCTIC-CLIMATE-DATA" target="_blank">View on GitHub</a>
-    </div>
+        <button class="accordion">Neural Network for Arctic Climate Data</button>
+        <div class="panel">
+            <p>PyTorch 4D reconstruction neural network predicting Arctic Ocean temperature and salinity profiles.</p>
+            <a href="https://github.com/Gulizarrr/NEURAL-NETWORK-FOR-ARCTIC-CLIMATE-DATA" target="_blank">View on GitHub</a>
+        </div>
 
-    <button class="accordion">Computer Vision Project (Intern)</button>
-    <div class="panel">
-        <p>Started a Computer Vision project during AI Engineer role. Developed initial model and framework.</p>
-    </div>
+        <button class="accordion">Computer Vision Project (Intern)</button>
+        <div class="panel">
+            <p>Started a Computer Vision project during AI Engineer role. Developed initial model and framework.</p>
+        </div>
+    </section>
 
-    <div class="projects"></div>
-</section>
+    <section id="cv" class="visible">
+        <h2>Curriculum Vitae</h2>
+        <iframe src="CV.pdf" class="cv-frame"></iframe>
+    </section>
 
-<section id="cv">
-    <h2 data-lang-en="Curriculum Vitae" data-lang-de="Lebenslauf" data-lang-tr="Özgeçmiş" data-lang-fr="CV">Curriculum Vitae</h2>
-    <iframe src="CV.pdf" class="cv-frame"></iframe>
-</section>
+    <section id="hobbies" class="visible">
+        <h2>Hobbies</h2>
+        <div class="hobbies">
+            <div class="hobby">Photography</div>
+            <div class="hobby">Travel</div>
+            <div class="hobby">Gardening</div>
+            <div class="hobby">Reading</div>
+        </div>
+    </section>
 
-<section id="hobbies">
-    <h2 data-lang-en="Hobbies" data-lang-de="Hobbys" data-lang-tr="Hobiler" data-lang-fr="Loisirs">Hobbies</h2>
-    <div class="hobbies">
-        <div class="hobby">Photography</div>
-        <div class="hobby">Travel</div>
-        <div class="hobby">Gardening</div>
-        <div class="hobby">Reading</div>
-    </div>
-</section>
+    <script>
+        // Accordion functionality
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
 
-<section id="languages">
-    <h2 data-lang-en="Languages" data-lang-de="Sprachen" data-lang-tr="Diller" data-lang-fr="Langues">Languages</h2>
-    <p>EN / DE / TR / FR</p>
-</section>
-
-<script>
-    // --- Accordion ---
-    const acc = document.getElementsByClassName("accordion");
-    for(let i=0;i<acc.length;i++){
-        acc[i].addEventListener("click", function(){
-            this.classList.toggle("active");
-            const panel = this.nextElementSibling;
-            if(panel.style.maxHeight){
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    }
-
-    // --- Scroll Animation ---
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if(rect.top < window.innerHeight - 100){
-                section.classList.add("visible");
-            }
-        });
-    });
-
-    // --- Language Switch ---
-    function changeLanguage(lang){
-        document.querySelectorAll('[data-lang-'+lang+']').forEach(el=>{
-            el.innerText = el.getAttribute('data-lang-'+lang);
-        });
-    }
-</script>
-
+        // Show sections
+        const sections = document.querySelectorAll("section");
+        sections.forEach(sec => sec.classList.add("visible"));
+    </script>
 </body>
 </html>
