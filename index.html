@@ -1,34 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guluzar Durmaz Pienkowski - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gülüzar Durmaz Portfolio</title>
+<style>
+    /* --- Genel Stil --- */
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7e4e4; /* pastel gül kurusu */
+        color: #333;
+        scroll-behavior: smooth;
+    }
+    header {
+        padding: 20px;
+        text-align: center;
+        background-color: #f7c9c9;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0; }
+    nav {
+        margin-top: 10px;
+    }
+    nav button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #fff0f0;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    nav button:hover { background-color: #f7c9c9; }
+
+    /* --- Bölümler --- */
+    section {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff0f0;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    h2 {
+        margin-top: 0;
+    }
+
+    /* --- Accordion --- */
+    .accordion {
+        background-color: #333333; /* koyu gri */
+        color: #f7e4e4;
+        cursor: pointer;
+        padding: 15px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .accordion:hover { background-color: #555555; }
+    .accordion.active { background-color: #444444; }
+    .panel {
+        padding: 0 15px;
+        background-color: #444444;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        color: #f7e4e4;
+        border-radius: 0 0 5px 5px;
+        margin-bottom: 10px;
+    }
+
+    /* --- Github projeleri --- */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .project-card {
+        background-color: #333333;
+        color: #f7e4e4;
+        padding: 15px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* --- Fotoğraf alanı --- */
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #ddd;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    /* --- Hobiler --- */
+    .hobbies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .hobby {
+        width: 100px;
+        height: 100px;
+        background-color: #f7c9c9;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* --- CV --- */
+    .cv-frame {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+</style>
 </head>
 <body>
-    <header>
-        <h1>Guluzar Durmaz Pienkowski</h1>
-        <p>AI Engineer | Computer Vision | Data Science</p>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am transitioning my career into AI and Computer Vision, with hands-on experience in projects involving satellite data analysis, deep learning, and high-performance computing. Currently seeking junior or internship opportunities in Switzerland.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="https://github.com/Gulizarrr/NEURAL-NETWORK-FOR-ARCTIC-CLIMATE-DATA" target="_blank">Neural Network for Arctic Climate Data</a></li>
-                <li><a href="http://aiac.ae.metu.edu.tr/paper.php/AIAC-2021-103" target="_blank">AIAC Conference Paper</a></li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: gulizar@example.com</p>
-            <p>GitHub: <a href="https://github.com/Gulizarrr" target="_blank">github.com/Gulizarrr</a></p>
-        </section>
-    </main>
-    <script src="script.js"></script>
+
+<header>
+    <h1>Gülüzar Durmaz</h1>
+    <nav>
+        <button onclick="changeLanguage('en')">EN</button>
+        <button onclick="changeLanguage('de')">DE</button>
+        <button onclick="changeLanguage('tr')">TR</button>
+        <button onclick="changeLanguage('fr')">FR</button>
+    </nav>
+</header>
+
+<section id="about" class="visible">
+    <h2>About Me</h2>
+    <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+    <p>Machine Learning & Computer Vision enthusiast. Career changer with several projects built from scratch. Open to junior / internship positions.</p>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <button class="accordion">Neural Network for Arctic Climate Data</button>
+    <div class="panel">
+        <p>PyTorch 4D reconstruction neural network predicting Arctic Ocean temperature and salinity profiles.</p>
+        <a href="https://github.com/Gulizarrr/NEURAL-NETWORK-FOR-ARCTIC-CLIMATE-DATA" target="_blank">View on GitHub</a>
+    </div>
+
+    <button class="accordion">Computer Vision Project (Intern)</button>
+    <div class="panel">
+        <p>Started a Computer Vision project during AI Engineer role. Developed initial model and framework.</p>
+    </div>
+
+    <div class="projects">
+        <!-- Add more project cards here -->
+    </div>
+</section>
+
+<section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <iframe src="CV.pdf" class="cv-frame"></iframe>
+</section>
+
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <div class="hobbies">
+        <div class="hobby">Photography</div>
+        <div class="hobby">Travel</div>
+        <div class="hobby">Gardening</div>
+        <div class="hobby">Reading</div>
+    </div>
+</section>
+
+<section id="languages">
+    <h2>Languages</h2>
+    <p>EN / DE / TR / FR</p>
+</section>
+
+<script>
+    // --- Accordion ---
+    const acc = document.getElementsByClassName("accordion");
+    for(let i=0;i<acc.length;i++){
+        acc[i].addEventListener("click", function(){
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if(panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+
+    // --- Scroll Animation ---
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 100){
+                section.classList.add("visible");
+            }
+        });
+    });
+
+    // --- Language Switch ---
+    function changeLanguage(lang){
+        alert("Language switch to: " + lang + " (content translation to be added)");
+        // Burada ileride içerik çevirisi ekleyebilirsin
+    }
+</script>
+
 </body>
 </html>
+
