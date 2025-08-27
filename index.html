@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<meta http-equiv="refresh" content="0; url=https://github.com/Gulizarrr">-->
@@ -32,11 +33,11 @@
             border: none;
             cursor: pointer;
             background-color: #D3D3D3;
-            color: #181a1a;
+            color: #070707;
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        nav button:hover { background-color: #151616; }
+        nav button:hover { background-color: #7EC8C9; }
 
         /* --- Bölümler --- */
         section {
@@ -157,6 +158,8 @@
     </style>
 </head>
 <body>
+    <div class="sidebar-decoration"></div>
+    <div class="sidebar-decoration-right"></div>
 
 <header>
     <h1>Gülüzar DURMAZ PIEŃKOWSKI</h1>
@@ -179,8 +182,10 @@
     </p>
 </section>
 
+
 <section id="projects">
     <h2 data-lang-en="PROJECTS" data-lang-de="Projekte" data-lang-tr="Projeler" data-lang-fr="Projets">PROJECTS</h2>
+    <div class="project-gif"></div>
 
     <!-- 1 -->
     <button class="accordion">1. Enhancing Occupational Safety Detection Using Computer Vision</button>
@@ -252,6 +257,15 @@
         <div class="hobby">COOKING</div>
     </div>
 </section>
+
+<section>
+    <h2>Contact</h2>
+    <p>You can find me on <a href="https://www.linkedin.com/in/gulizardurmaz/" target="_blank">LinkedIn</a></p>
+</section>
+
+<footer>
+    <p>© 2025 Gülüzar Durmaz Pieńkowski</p>
+</footer>
 
 <script>
     // --- Accordion ---

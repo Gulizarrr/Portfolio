@@ -17,7 +17,7 @@ main {
 }
 
 h2 {
-    color: #b71c1c;
+    color: #94314f;
 }
 
 a {
@@ -28,3 +28,47 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Kenar çizgileri */
+body {
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+}
+
+/* Projects yanındaki sol GIF balonu */
+.project-gif {
+  position: absolute;
+  top: 50%;
+  left: -400px; /* solda dışarı doğru taşır */
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+  border: 8px solid black;
+  border-radius: 50%;
+  background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHVtc3N5Zm1lZzZlajRoaDJtbm04ZzEydWQ0amF4cDQ5djUyc2xqayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/who54CjrjzgxD1Y7Nj/giphy.gif') no-repeat center center;
+  background-size: cover;
+  z-index: 500;
+}
+
+/* Projects section'u relative yap ki .project-gif ona göre hizalansın */
+#projects {
+  position: relative;
+}
+
+
+
+
+
+
+
+footer {
+  text-align: center;   /* Ortala */
+  padding: 20px;        /* Yukarı-aşağı boşluk */
+  background-color: #f8f8f8; /* İsteğe bağlı: açık gri arka plan */
+  border-top: 1px solid #ccc; /* Üst çizgi */
+  position: relative;   /* Normal akışta kalsın */
+  bottom: 0;
+  width: 100%;
+}
+
+
